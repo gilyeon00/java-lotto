@@ -85,11 +85,14 @@
 
 # 🛠 기능 목록
 - [ ] 로또 구입 금액을 입력받는다 
+가  - [ ] (예외)숫자가 맞는지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
+  - [ ] (예외)1000원 이상인지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
   - [ ] (예외)입력받은 구입금액이 1000원 단위인지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
 - [ ] 입력받은 구입 금액만큼 로또를 발행한다
   - [ ] 입력받은 구입 금액이 로또 몇장을 살 수 있는지 계산한다
   - [ ] 해당 장 수만큼 로또를 발행한다
 - [ ] 당첨 번호를 입력받는다
+  - 입력받은 당첨번호를 ','로 분리해준다
   - [ ] (예외)6개의 수를 입력받았는 지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
   - [ ] (예외)1~45사이의 수인지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
 - [ ] 보너스 번호를 입력받는다
@@ -102,20 +105,23 @@
   - [ ] 수익률을 출력해준다(소수점 둘째 자리에서 반올림)
 
 ##  🛠 메서드 / 클래스 정의
-- 로또 구입 금액을 입력받는다 - getPriceForLotto()
-  - (예외) 입력받은 구입금액이 1000원 단위인지 확인 - validatePriceForLotto()
+- 로또 구입 금액을 입력받는다 - InputView # getPriceForLotto()  
+- (예외)숫자가 맞는지 확인 - InputView # validateIsNumber()
+- (예외)1000원 이상인지 확인 - InputView # validateCanBuy()
+- (예외) 입력받은 구입금액이 1000원 단위인지 확인 - InputView # validatePriceForLotto()
 - 입력받은 구입 금액만큼 로또를 발행해서 출력한다 
-  - 입력받은 구입 금액이 로또 몇장을 살 수 있는지 계산한다 - checkHowManyLotto()
-  - 해당 장 수만큼 로또를 발행한다 - makeLottoBundle() 
-  - 발행한 로또를 출력한다 - showYourLotto()
-- 당첨 번호를 입력받는다 - getWinningNumber()
-  - (예외)6개의 수를 입력받았는 지 확인 - validate()
-  - (예외)1~45사이의 수인지 확인 - validateRange()
-- 보너스 번호를 입력받는다 - getBonusNumber()
-  - (예외)1~45사이의 수인지 확인 - validateRange()
-- 발행한 로또들과 당첨 번호를 비교해서 일치하는 개수를 계산한다 - checkHowMuchSame()
+  - 입력받은 구입 금액이 로또 몇장을 살 수 있는지 계산한다 - Lotto # checkHowManyLotto()
+  - 해당 장 수만큼 로또를 발행한다 - Lotto # makeLottoBundle() 
+  - 발행한 로또를 출력한다 - OutputView # showYourLotto()
+- 당첨 번호를 입력받는다 - InputView # getWinningNumber()
+  - 입력받은 당첨번호를 ','로 분리해준다 - InputView # SeparateNumber()
+  - (예외)6개의 수를 입력받았는 지 확인 - Lotto # validate()
+  - (예외)1~45사이의 수인지 확인 - Lotto # validateRange()
+- 보너스 번호를 입력받는다 - InputView # getBonusNumber()
+  - (예외)1~45사이의 수인지 확인 - Lotto # validateRange()
+- 발행한 로또들과 당첨 번호를 비교해서 일치하는 개수를 계산한다 - Lotto # checkHowMuchSame()
   - 5개 이전까지는 보너스번호를 취급하지 않고, 5개부터 맞출 시에는 보너스번호 일치 유무 확인
-- 수익률을 계산한다 - checkYield()
+- 수익률을 계산한다 - Lotto # checkYield()
 - 당첨 통계를 출력한다
-  - 일치하는 개수를 계산한 것을 출력해준다 - showkHowMuchSame()
-  - 수익률을 출력해준다(소수점 둘째 자리에서 반올림) - showYield()
+  - 일치하는 개수를 계산한 것을 출력해준다 - OutputView # showHowMuchSame()
+  - 수익률을 출력해준다(소수점 둘째 자리에서 반올림) -OutputView # showYield()
