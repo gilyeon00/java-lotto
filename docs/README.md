@@ -84,8 +84,8 @@
 
 
 # 🛠 기능 목록
-- [ ] 로또 구입 금액을 입력받는다 
-가  - [ ] (예외)숫자가 맞는지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
+- [x] 로또 구입 금액을 입력받는다 
+가  ~~- [ ] (예외)숫자가 맞는지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)~~
   - [ ] (예외)1000원 이상인지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
   - [ ] (예외)입력받은 구입금액이 1000원 단위인지 확인 (IllegalArgumentException발생, [ERROR]로 시작하는 에러메세지 출력 후 종료)
 - [ ] 입력받은 구입 금액만큼 로또를 발행한다
@@ -106,7 +106,7 @@
 
 ##  🛠 메서드 / 클래스 정의
 - 로또 구입 금액을 입력받는다 - InputView # getPriceForLotto()  
-- (예외)숫자가 맞는지 확인 - InputView # validateIsNumber()
+~~- (예외)숫자가 맞는지 확인 - InputView # validateIsNumber()~~
 - (예외)1000원 이상인지 확인 - InputView # validateCanBuy()
 - (예외) 입력받은 구입금액이 1000원 단위인지 확인 - InputView # validatePriceForLotto()
 - 입력받은 구입 금액만큼 로또를 발행해서 출력한다 
